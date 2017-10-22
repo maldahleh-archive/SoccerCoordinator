@@ -31,10 +31,9 @@ var unexperiencedPlayers: [String, Any] = []
 /*
      Dictionaries for each independent team
  */
-let teamSharks: [String, Any] = []
-let teamDragons: [String, Any] = []
-let teamRaptors: [String, Any] = []
-
+var teamSharks: [String, Any] = []
+var teamDragons: [String, Any] = []
+var teamRaptors: [String, Any] = []
 
 /*
      Function that when called will sort all players into either experienced or unexperienced categories
