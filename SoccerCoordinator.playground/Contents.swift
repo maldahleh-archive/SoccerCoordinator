@@ -23,17 +23,17 @@ let players = [
 ]
 
 /*
-     Dictionaries to sort players into experienced and unexperienced sets
+     Lists used to sort players into experienced and unexperienced sets
  */
-var experiencedPlayers: [String: Any] = []
-var unexperiencedPlayers: [String, Any] = []
+var experiencedPlayers: [[String: Any]] = []
+var unexperiencedPlayers: [[String: Any]] = []
 
 /*
-     Dictionaries for each independent team
+     Lists for each independent team
  */
-var teamSharks: [String, Any] = []
-var teamDragons: [String, Any] = []
-var teamRaptors: [String, Any] = []
+var teamSharks: [[String: Any]] = []
+var teamDragons: [[String: Any]] = []
+var teamRaptors: [[String: Any]] = []
 
 /*
      Function that when called will sort all players into either experienced or unexperienced categories
@@ -46,4 +46,27 @@ func sortPlayers() {
             unexperiencedPlayers.append(player)
         }
     }
+}
+
+/*
+     Function that assigns all the experienced players, ensuring an equal balance on all three teams
+ */
+func sortExperiencedPlayers() {
+    for experiencedPlayer in experiencedPlayers {
+        if teamSharks.count <= teamDragons.count && teamSharks.count <= teamRaptors.count {
+            teamSharks.append(experiencedPlayer)
+        } else if teamDragons.count <= teamRaptors.count {
+            teamDragons.append(experiencedPlayer)
+        } else {
+            teamRaptors.append(experiencedPlayer)
+        }
+    }
+}
+
+/*
+     Function that runs the program
+ */
+func runProgram() {
+    sortPlayers()
+    sortExperiencedPlayers()
 }
