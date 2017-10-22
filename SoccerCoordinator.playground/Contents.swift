@@ -1,4 +1,18 @@
 /*
+     Treehouse iOS Techdegree Project #1
+     Author: Mohammed Al-Dahleh
+ */
+
+/*
+     Dictionary of the three team's practice times
+ */
+let practiceTimes = [
+    "dragons": "March 17, 1 PM",
+    "sharks": "March 17, 3 PM",
+    "raptors": "March 18, 1 PM"
+]
+
+/*
      Dictionary to include all the possible players that will be assigned to teams
  */
 let players = [
