@@ -78,9 +78,27 @@ func sortExperiencedPlayers() {
 }
 
 /*
+     Function that assigns all the unexperienced players to teams
+ */
+func sortUnexperiencedPlayers() {
+    for unexperiencedPlayer in unexperiencedPlayers {
+        if teamSharks.count <= teamDragons.count && teamSharks.count <= teamRaptors.count {
+            teamSharks.append(unexperiencedPlayer)
+        } else if teamDragons.count <= teamRaptors.count {
+            teamDragons.append(unexperiencedPlayer)
+        } else {
+            teamRaptors.append(unexperiencedPlayer)
+        }
+    }
+}
+
+/*
      Function that runs the program
  */
 func runProgram() {
     sortPlayers()
     sortExperiencedPlayers()
+    sortUnexperiencedPlayers()
 }
+
+runProgram()
