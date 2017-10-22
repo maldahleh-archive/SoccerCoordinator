@@ -50,6 +50,11 @@ var teamDragons: [[String: Any]] = []
 var teamRaptors: [[String: Any]] = []
 
 /*
+     List that stores all the letters
+ */
+var letters: [String] = []
+
+/*
      Function that when called will sort all players into either experienced or unexperienced categories
  */
 func sortPlayers() {
@@ -93,12 +98,45 @@ func sortUnexperiencedPlayers() {
 }
 
 /*
+     Function that generates and stores a letter
+ */
+func generateLetterFor(playerData player: [String: Any], team: String) {
+    let guardianNames = player["guardians"] as! String
+    let playerName = player["name"] as! String
+    let practiceDate = practiceTimes[team]!
+    
+    let letter = "Dear \(guardianNames),\n Your child, \(playerName) was assigned to the \(team). Their first practice will happen on \(practiceDate)."
+    letters.append(letter)
+    
+    print(letter)
+}
+
+/*
+     Function that handles all the letters for every team
+ */
+func handleLetters() {
+    for player in teamSharks {
+        generateLetterFor(playerData: player, team: "sharks")
+    }
+    
+    for player in teamDragons {
+        generateLetterFor(playerData: player, team: "dragons")
+    }
+    
+    for player in teamRaptors {
+        generateLetterFor(playerData: player, team: "raptors")
+    }
+}
+
+/*
      Function that runs the program
  */
 func runProgram() {
     sortPlayers()
     sortExperiencedPlayers()
     sortUnexperiencedPlayers()
+    
+    handleLetters()
 }
 
 runProgram()
