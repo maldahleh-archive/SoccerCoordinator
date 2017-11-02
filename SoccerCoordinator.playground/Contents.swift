@@ -129,14 +129,10 @@ func handleLetters() {
 }
 
 /*
-     Function that runs the program
+     Run the program
  */
-func runProgram() {
-    sortPlayers()
-    sortExperiencedPlayers()
-    sortUnexperiencedPlayers()
+sortPlayers()
+sortExperiencedPlayers()
+sortUnexperiencedPlayers()
     
-    handleLetters()
-}
-
-runProgram()
+handleLetters()
