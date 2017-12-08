@@ -1,6 +1,5 @@
 # Soccer Coordinator
 
-## Overview
 This is the first project in the Treehouse iOS Techdegree, the goal of this project is to demonstrate knowledge of the basics of the Swift programming language.
 
 ## Project Instructions
